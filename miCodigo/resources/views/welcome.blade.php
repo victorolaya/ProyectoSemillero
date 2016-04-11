@@ -1,45 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('plantilla.plantilla')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('contenido')
+<p style="text-align: center">
+    <strong>Semillero Universitario </strong>donde te sembramos el amor por aprender, conocer y experimentar de manera divertida, además te abonamos para la educación universitaria y cosechamos tus ideas para un futuro mejor para todos.﻿﻿                      
+</p>
+@endsection
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+@section('sidebar-opciones')
+<a href="#" class="list-group-item active">SEMILLAS PREESCOLAR</a>
+<a href="#" class="list-group-item">SEMILLAS PRIMARIA</a>
+<a href="#" class="list-group-item">SEMILLAS SECUNDARIA</a>
+<a href="#" class="list-group-item">DIPLOMADO EXPERIENCIAS UNIVERSITARIAS</a>
+<a href="#" class="list-group-item">PRE ICFES SABER 11°</a>
+<a href="#" class="list-group-item">PRE ICFES 10°</a>
+@endsection

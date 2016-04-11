@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/formularios-y-datos-semillero', function(){
+	return view('formularios-datos');
+});
+
+Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
+
+	Route::resource('','UsersController');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

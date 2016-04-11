@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TablaSemilla extends Migration
+class TablaSemillas extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class TablaSemilla extends Migration
      */
     public function up()
     {
-        Schema::create('semilla', function (Blueprint $table) {
+        Schema::create('semillas', function (Blueprint $table) {
             $table->increments('id');
             $table->String('nombre', 25);
             $table->String('apellidos', 60);
@@ -35,6 +35,6 @@ class TablaSemilla extends Migration
      */
     public function down()
     {
-        Schema::drop('semilla');
+        Schema::drop('semillas');
     }
 }
