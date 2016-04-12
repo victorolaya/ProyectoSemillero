@@ -31,5 +31,5 @@ Somos un proyecto de extensión universitaria en la <a href="http://www.uniquind
 <a href="#" class="list-group-item active">OBJETIVOS</a>
 <a href="#" class="list-group-item">FUNDACION SOCIAL</a>
 <a href="#" class="list-group-item">FORMULARIO INSCRIPCIÓN PRE ICFES - DIPLOMADO EXPEIENCIAS U</a>
-<a href="/formularios-y-datos-semillero/formulario-de-inscripción-semillas" class="list-group-item">FORMULARIO DE INSCRIPCIÓN SEMILLAS</a>
+<a href="/formularios-y-datos-semillero/formulario-de-inscripción-semillas/" class="list-group-item">FORMULARIO DE INSCRIPCIÓN SEMILLAS</a>
 @endsection

@@ -16,14 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/formularios-y-datos-semillero', function(){
-	return view('formularios-datos');
-});
-
-Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
-
+Route::group(['prefix'=>'/formularios-y-datos-semillero/'],function(){
+	Route::get('store','UsersController@store');
 	Route::resource('','UsersController');
+	Route::get('/formulario-de-inscripción-semillas/', function(){
+		return view('formulario-inscripcion');
+	});
+
+
 });
+
 
 /*
 |--------------------------------------------------------------------------
