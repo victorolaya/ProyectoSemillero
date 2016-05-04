@@ -8,6 +8,6 @@ class Semilla extends Model
 {
     protected $table = "Semillas";
 
-    protected $fillable = ['nombre','apellidos','edad','documento','direccion',
-    'telefono','celular1','celular2','correoElectronico'];
+   protected $fillable = ['nombre','apellidos','edad','documento','numero','direccion',
+   'telefono','celular1','celular2','correoElectronico'];
 }

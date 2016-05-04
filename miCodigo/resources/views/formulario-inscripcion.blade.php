@@ -23,7 +23,7 @@
 	2. Después de diligenciado tienes que confirmar a cualquiera de los  teléfonos: 321 851 42 05 - 316 250 01 19 - (6)735 93 34 Fijo, si tu inscripción quedo registrada en el sistema y donde te confirmaran lo siguiente que deberás realizar.
 	</P>
 
-	{!! Form::open(array('url' => '/formularios-y-datos-semillero/store', 'method' => 'POST')) !!}
+		{!! Form::open(['route' => 'formularios-y-datos-semillero..store', 'method' => 'POST']) !!}
 	    <div class = "form-group">
 	    	{!! form::label('fecha','Fecha de diligenciamiento de este formulario')!!}
 	    	{!! form::date('calendario-fecha',\Carbon\Carbon::now(), ['class' => 'form-control', 'required'])!!}
@@ -33,17 +33,17 @@
 	    	{!! form::text('nombre', null, ['class' => 'form-control', 'placeholder' => 'nombre del aspirante','required'])!!}
 	    </div>
 	    <div class = "form-group">
-	    	{!! form::label('apellido','Apellidos del aspirante')!!}
-	    	{!! form::text('apellido',null,['class' => 'form-control', 'placeholder' => 'apellidos del aspirante','required'])!!}
+	    	{!! form::label('apellidos','Apellidos del aspirante')!!}
+	    	{!! form::text('apellidos',null,['class' => 'form-control', 'placeholder' => 'apellidos del aspirante','required'])!!}
 	    </div>
 	    <div class = "form-group">
 	    	{!! form::label('edad','Edad')!!}
 	    	{!! form::text('edad',null,['class' => 'form-control', 'placeholder' => 'Edad','required'])!!}
 	    </div>
 	    <div class = "form-group">
-	    	{!! form::label('id','Tipo de documento de identidad')!!}
-	    	{!!Form::select('size', array('' => 'Seleccione una opción','Cc' => 'Cedula de ciudadania', 'Ce' => 'Cedula extranjera', 'Ti' => 'Tarjeta de identidad', 'O' => 'Otro'), null, ['class' => 'form-control'])!!}
-	    	{!! form::text('id',null,['class' => 'form-control', 'placeholder' => 'Numero de identificacion','required'])!!}
+	    	{!! form::label('documento','Tipo de documento de identidad')!!}
+	    	{!!Form::select('documento', array('' => 'Seleccione una opción','CC.' => 'Cedula de ciudadania', 'CE' => 'Cedula extranjera', 'T.I' => 'Tarjeta de identidad', 'Otro' => 'Otro'), null, ['class' => 'form-control'])!!}
+	    	{!! form::text('numero',null,['class' => 'form-control', 'placeholder' => 'Numero de identificacion','required'])!!}
 		</div>
 		<div class = "form-group">
 	    	{!! form::label('fechaNacimiento','Fecha de nacimiento')!!}
@@ -58,20 +58,20 @@
 	    	{!! form::text('municipio', null, ['class' => 'form-control', 'placeholder' => 'municipio','required'])!!}
 	    </div>
 	    <div class ="form-group">
-	    	{!! form::label('telFijo', 'Télefono Fijo' )!!}
-	    	{!! form::text('telFijo', null, ['class' => 'form-control', 'placeholder' => 'Télefono Fijo','required'])!!}
+	    	{!! form::label('telefono', 'Télefono Fijo' )!!}
+	    	{!! form::text('telefono', null, ['class' => 'form-control', 'placeholder' => 'Télefono Fijo','required'])!!}
 	    </div>
 	    <div class ="form-group">
-	    	{!! form::label('cel1', 'Celular 1' )!!}
-	    	{!! form::text('cel1', null, ['class' => 'form-control', 'placeholder' => 'Celular 1','required'])!!}
+	    	{!! form::label('celular1', 'Celular 1' )!!}
+	    	{!! form::text('celular1', null, ['class' => 'form-control', 'placeholder' => 'Celular 1','required'])!!}
 	    </div>
 	    <div class ="form-group">
-	    	{!! form::label('cel2', 'Celular 2' )!!}
-	    	{!! form::text('cel2', null, ['class' => 'form-control', 'placeholder' => 'Celular 2','required'])!!}
+	    	{!! form::label('celular2', 'Celular 2' )!!}
+	    	{!! form::text('celular2', null, ['class' => 'form-control', 'placeholder' => 'Celular 2','required'])!!}
 	    </div>
 	     <div class ="form-group">
-	    	{!! form::label('correo', 'Correo electrónico' )!!}
-	    	{!! form::text('correo', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico','required'])!!}
+	    	{!! form::label('correoElectronico', 'Correo electrónico' )!!}
+	    	{!! form::text('correoElectronico', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico','required'])!!}
 	    </div>
 	     <div class ="form-group">
 	    	{!! form::label('eps', 'EPS' )!!}

@@ -24,10 +24,10 @@ class UsersController extends Controller
     }
 
     public function store(Request $request){
-    	dd($request->all());
+    	
         $semilla = new Semilla($request->all());
-
-
+        $semilla->save();
+        dd("Semilla guardada con exito");
     }
 }
 
