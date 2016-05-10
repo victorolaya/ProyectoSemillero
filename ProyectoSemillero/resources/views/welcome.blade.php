@@ -5,6 +5,6 @@
 	Inicio De Mi Pagina
 @endsection
 @section('content')
-<h1>Hola Esto Es Bootstrap</h1>
-<a href="" class="btn btn-success">boton de bootstrap</a>
+<h1>Semillero Universitario</h1>
+<a href="" class="btn btn-success">Acceder</a>
 @endsection
