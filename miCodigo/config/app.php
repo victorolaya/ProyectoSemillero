@@ -64,8 +64,8 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
-    'locale' => 'en',
+  //'locale' => 'en', si se quieren los mensajes en ingles
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,8 +77,8 @@ return [
     | the language folders that are provided through your application.
     |
     */
-
-    'fallback_locale' => 'en',
+    //Mensajes en Español
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -160,6 +160,11 @@ return [
         *Providers personales
         */
         Collective\Html\HtmlServiceProvider::class,
+        /*
+        *Providers personales (vic)
+        */
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class
 
     ],
 
@@ -212,6 +217,10 @@ return [
         */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        /*
+        *Aliases personales (vic), Mensajes flash
+        */
+         'Flash' => Laracasts\Flash\Flash::class
     ],
 
 ];
