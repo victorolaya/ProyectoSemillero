@@ -39,7 +39,7 @@ Route::group(['middleware'=>['web'],'prefix' => 'admin'], function () {
 	Route::get('pdf',function(){
 		//para poner en el controlador, con \ antes de PDF (\PDF) para no tener conflictos con el namespace
 		$mentores = App\Mentor::all();
-		$pdf = PDF::loadView('admin/mentor/vistapdf',);
+		$pdf = PDF::loadView('admin/mentor/vistapdf');
 		return $pdf->download('archivo.pdf');
 	});
 
