@@ -78,7 +78,8 @@ class ControladorMentores extends Controller
       public function edit($id)
     {
        $mentor = Mentor::find($id);
-       return view('admin.mentor.editar')->with('mentor',$mentor);
+       $areas = Area::orderBy('nombre','ASC')->lists('nombre', 'id');
+       return view('admin.mentor.editar')->with('mentor',$mentor,'areas',$areas);
     }
 
     public function update(Request $request, $id)

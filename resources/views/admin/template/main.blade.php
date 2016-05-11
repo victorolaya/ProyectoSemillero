@@ -3,32 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<title>@yield('title', 'Default') | Panel De Administracion</title>
-	<link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 	<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
 </head>
-<body class="admin-body">
-
+<body>
 
 	<!--Con este nav habido en partials, inserto mi menu de navegacion en mi pagina-->
-	@include('admin.template.partials.nav')
+	<section class="header">
+		<div class="container text-center">    
+		  <div class="row">
+		  		@include('admin.template.partials.nav')
+		  </div>
+		</div>
+	</section>
 
 	<section class="section-admin">
-		<div class="panel panel-default">
-			<div class="panel-heading">
+		<div class="container">
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
 
-				<h3 class="panel-title">@yield('title')</h3>
+						<h3 class="panel-title">@yield('title')</h3>
 
-			</div>
-			<div class="panel-body">
+					</div>
+					<div class="panel-body">
 
-				@include('flash::message')
-				<!-- Incluyo errores.blade.php para optimizacion de codigo-->
-			@include('admin.template.partials.errores')
-				@yield('content')
+						@include('flash::message')
+						<!-- Incluyo errores.blade.php para optimizacion de codigo-->
+					@include('admin.template.partials.errores')
+						@yield('content')
 
+					</div>
+				</div>
 			</div>
 		</div>
-		
 	</section>	
 
 	<footer class="admin-footer">
