@@ -78,7 +78,8 @@ class ControladorMentores extends Controller
       public function edit($id)
     {
        $mentor = Mentor::find($id);
-       return view('admin.mentor.editar')->with('mentor',$mentor);
+       $areas = Area::orderBy('nombre','ASC')->lists('nombre', 'id');
+       return view('admin.mentor.editar')->with('mentor',$mentor)->with('areas',$areas);
     }
 
     public function update(Request $request, $id)
@@ -102,6 +103,15 @@ class ControladorMentores extends Controller
           Flash::error("El mentor " . $mentor->nombres . " ha sido ELIMINADO de forma exitosa!!!");
         //Una Vez elimina el susario, redirecciono a una ruta
        return redirect()->route('admin.mentor.index');
+    }
+
+    public function imprimirpdf()
+    {
+      //para poner en el controlador, con \ antes de PDF (\PDF) para no tener conflictos con el namespace
+    $mentores = Mentor::all();
+    //Mando un arreglo de mentores "mentores"
+    $pdf = \PDF::loadView('admin/mentor/vistapdf',['mentores' => $mentores]);
+    return $pdf->download('archivo.pdf');
     }
 }
 

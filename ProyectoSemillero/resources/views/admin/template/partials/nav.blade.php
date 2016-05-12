@@ -51,14 +51,30 @@
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>  -->
 
+
+       <!-- REPORTES ///////////////////////////////////// 
+        <ul class="nav navbar-nav navbar-right2">
+         <li class="dropdown2">
+          <a href="#" class="dropdown-toggle2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Generar Reportes <span class="caret"></span></a>
+          <ul class="dropdown-menu2">
+            <li><a href="#">Reporte de Mentores</a></li>
+            <li><a href="#">Reporte de Semillas</a></li>
+          </ul>
+        </li>
+      </ul>
+       /////////////////////////////////////////////////-->
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Pagina Principal</a></li>
+
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Generar Reportes <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Salir</a></li>
-       <!-- <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+           <!-- <li><a href="pdf">Reporte Mentores</a></li>-->
+           <li><a href="{{ route('admin.mentor.imprimirpdf') }}">Reporte Mentores</a></li>
+           {{ route('admin.grupo.index') }}
+             <li><a href="#">Reporte Semillas</a></li>
+           <!--  <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>  -->
           </ul>
