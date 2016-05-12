@@ -1,0 +1,26 @@
+.encabezado{
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+.admin-logo-semillero{
+	width: 100px;
+}
+.admin-logo-universidad{
+	width: 100px;
+}
+.texto{
+	width: 50%%;
+}
+.textoEncabezadoPDF{
+	text-align: center;
+}
+.reporte{
+	border: 1px solid #333;
+	width: 100%;
+}
+.reporte tbody tr td{
+	border: 0.5px solid gray;
+	padding: 5px;
+	text-align: center;
+}
