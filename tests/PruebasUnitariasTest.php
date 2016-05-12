@@ -82,7 +82,7 @@ class PruebasUnitarias extends TestCase
     /**
     * Validando que funcione adecuadamente el registro en la BD de Grupos
     */
-     public function testRegistroDeGrupos()
+     /**public function testRegistroDeGrupos()
     {
         $grupo              = new App\Grupo();
         $grupo->nombre      = 'grupo 05';
@@ -97,7 +97,7 @@ class PruebasUnitarias extends TestCase
     
         $e->delete();
     }
-
+*/
     /**
      * A basic functional test example.
      *

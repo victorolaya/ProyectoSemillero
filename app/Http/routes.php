@@ -36,11 +36,14 @@ Route::group(['middleware'=>['web'],'prefix' => 'admin'], function () {
 	Route::resource('grupo','ControladorGrupos');
 	Route::get('grupos/{id}/destroy', ['uses' => 'ControladorGrupos@destroy','as' => 'admin.grupo.destroy']);
 
-	Route::get('pdf',function(){
+	Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
+		'as' => 'admin.mentor.imprimirpdf']);
+	/*Route::get('pdf',function(){
 		//para poner en el controlador, con \ antes de PDF (\PDF) para no tener conflictos con el namespace
 		$mentores = App\Mentor::all();
-		$pdf = PDF::loadView('admin/mentor/vistapdf');
+		//Mando un arreglo de mentores "mentores"
+		$pdf = PDF::loadView('admin/mentor/vistapdf',['mentores' => $mentores]);
 		return $pdf->download('archivo.pdf');
-	});
+	});*/
 
     });
