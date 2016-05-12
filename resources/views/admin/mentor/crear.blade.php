@@ -1,4 +1,4 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Registrar Mentor')
 
@@ -73,7 +73,7 @@
 				{!! Form::label('foto','Foto') !!}
 				{!! Form::file('foto') !!}
 		</div>
-		<div class="form-group">
+		<div style="text-align:center" class="form-group">
 			{!! Form::submit('Registrar Mentor', ['class' => 'btn btn-primary'])!!}
 		</div>
 

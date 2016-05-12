@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Crear Grupo')
 
-@section('content')
+@section('contenido')
 	
 		<!--Este codigo ya lo llamo directamente en main.blade.php referente a errores.blade.php-->
 	@if(count($errors) > 0)
@@ -33,7 +33,7 @@
 				{!! Form::label('mentores_id','Mentor Al Que Pertenece El grupo') !!}
 				{!! Form::text('mentores_id',null, ['class' => 'form-control', 'placeholder'=> 'Ingrese El Id Del Mentor Al Que Pertenecera El Grupo', 'required']) !!}
 		</div>
-		<div class="form-group">
+		<div style="text-align:center" class="form-group">
 			{!! Form::submit('Registrar', ['class' => 'btn btn-primary'])!!}
 		</div>
 
