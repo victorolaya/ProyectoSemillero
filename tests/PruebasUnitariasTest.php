@@ -10,21 +10,21 @@ class PruebasUnitarias extends TestCase
     //Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principañ
       public function testValidacionFramework()
     {
-
     $this->call('GET', '/');
-
     $this->assertResponseOk();
-
     } 
-
-    /**
-    * Validamos que el panel de administracion no fue craado
-    */
-    public function testMethod()
+    
+    //Validamos que el login funcione correctamente
+    public function testValidacionLogin()
     {
-    $this->call('GET', '/admin');
-    $this->assertResponseStatus(404);
-    }
+    $this->call('GET', '/admin/login');
+    $this->assertResponseOk();
+    } 
+    //Comprobamos que los campos de logeo funcionen adecuadamente
+   public function testComprobacionLogeo()
+	{
+		$this->visit('admin/login')->type("admin@gmail.com","email")->type("12345","password")->press('Login')->visit('admin');
+	}
 
     /**
     * Validando que funcione adecuadamente el registro en la BD de administrativos
