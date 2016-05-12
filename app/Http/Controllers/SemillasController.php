@@ -31,4 +31,17 @@ class SemillasController extends Controller
        	Flash::success("Se ha eliminado la semilla de forma exitosa!!!");
     	return redirect('/admin/semillas');
     }
+
+    public function update(Request $request, $id)
+    {
+       //dd($request->all());
+        $semilla = Semilla::find($id);
+        //Lleno los campos con la informacion de la semilla
+        $semilla->fill($request->all());
+        
+        $semilla->save();
+         Flash::success("Se ha editado la informacion de la semilla " . $semilla->nombre . " de forma satisfactoria!!!");
+        //Una Vez editado el usuario, redirecciono a una ruta
+       return redirect()->route('admin.semilla.listarSemillas');
+    }
 }

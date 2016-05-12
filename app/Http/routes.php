@@ -78,8 +78,10 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('admin/{id}/destroy',['uses'=>'AdminController@destroy', 
 		'as' => 'admin.admin.destroy']);
 
+	Route::resource('admin/semillas','SemillasController');
+
 	Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
-		Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
+		Route::get('mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
 			'as' => 'admin.mentor.imprimirpdf']);
 	});
 	
