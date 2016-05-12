@@ -26,7 +26,6 @@ class MentorRequest extends Request
         return [
            'nombres' => 'min:3|max:120|required',
            'apellidos' => 'min:3|max:120|required',
-           'area_id' => 'required'
         ];
     }
 }
