@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Editando Grupo: ' . $grupo->nombre)
 
-@section('content')
+@section('contenido')
 	
 	{!! Form::open(['route' => ['admin.grupo.update',$grupo], 'method' => 'PUT']) !!}
 
@@ -22,7 +22,7 @@
 				{!! Form::label('mentores_id','Grupo Al Que Pertenece') !!}
 				{!! Form::text('mentores_id',null, ['class' => 'form-control', 'placeholder'=> 'Ingrese El Id Del Mentor Al Que Pertenecera El Grupo', 'required']) !!}
 		</div>
-		<div class="form-group">
+		<div Style="text-align:center" class="form-group">
 			{!! Form::submit('Guardar Cambios', ['class' => 'btn btn-primary'])!!}
 
 		</div>

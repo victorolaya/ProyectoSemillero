@@ -2,7 +2,7 @@
 
 @section('title', 'Lista De Administradores')
 
-@section('content')
+@section('contenido')
 
 	<a href="{{ route('admin.user.create') }}" class="btn btn-info">Registrar Administrador</a><hr>
 

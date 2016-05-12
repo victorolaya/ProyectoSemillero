@@ -1,10 +1,17 @@
+@extends('layouts.app')
 
-@extends('admin.template.main')
-
-@section('title')
-	Inicio De Mi Pagina
-@endsection
 @section('content')
-<h1>Hola Esto Es Bootstrap</h1>
-<a href="" class="btn btn-success">boton de bootstrap</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Welcome</div>
+
+                <div class="panel-body">
+                    Your Application's Landing Page.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

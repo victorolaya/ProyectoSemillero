@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
-@section('title', 'Editar Area' . $area->nombre)
+@section('title', 'Editar Area - ' . $area->nombre)
 
-@section('content')
+@section('contenido')
 	
 	{!! Form::open(['route' => ['admin.area.update',$area], 'method' => 'PUT']) !!}
 
@@ -14,7 +14,7 @@
 				{!! Form::label('disponibilidad', 'Disponibilidad Del Area') !!}
 				{!! Form::select('disponibilidad', ['Si' => 'Si Encuentra Disponible','No'=>'No Se Encuentra Disponible'], $area->disponibilidad, ['class' => 'form-control'])!!}
 		</div>
-		<div class="form-group">
+		<div Style="text-align:center" class="form-group">
 			{!! Form::submit('Editar', ['class' => 'btn btn-primary'])!!}
 
 		</div>

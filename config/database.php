@@ -1,4 +1,11 @@
 <?php
+/*$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+*/
 
 return [
 
@@ -52,7 +59,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+       'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
@@ -65,6 +72,17 @@ return [
             'strict' => false,
             'engine' => null,
         ],
+
+     /* --------------------------------  'mysql' => array(
+            'driver'    => 'mysql',
+            'host'      => $host,
+            'database'  => $database,
+            'username'  => $username,
+            'password'  => $password,
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+        ),------------------------------------*/
 
         'pgsql' => [
             'driver' => 'pgsql',

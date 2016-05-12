@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Agregar Una Nueva Area')
 
-@section('content')
+@section('contenido')
 
 <!--Este codigo ya lo llamo directamente en main.blade.php referente a errores.blade.php-->
 	@if(count($errors) > 0)
@@ -25,7 +25,7 @@
 				{!! Form::label('disponibilidad', 'Disponibilidad Del Area') !!}
 				{!! Form::select('disponibilidad', ['Si' => 'Si Encuentra Disponible','No'=>'No Se Encuentra Disponible'], null, ['class' => 'form-control',  'placeholder' => 'Selecciones una opcion', 'required'])!!}
 		</div>
-		<div class="form-group">
+		<div Style="text-align:center"class="form-group">
 			{!! Form::submit('Agregar', ['class' => 'btn btn-primary'])!!}
 
 		</div>

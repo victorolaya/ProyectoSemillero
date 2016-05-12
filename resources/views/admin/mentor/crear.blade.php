@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Registrar Mentor')
 
-@section('content')
+@section('contenido')
 	
 	<!--Este codigo ya lo llamo directamente en main.blade.php referente a errores.blade.php-->
 	@if(count($errors) > 0)
@@ -73,7 +73,7 @@
 				{!! Form::label('foto','Foto') !!}
 				{!! Form::file('foto') !!}
 		</div>
-		<div class="form-group">
+		<div style="text-align:center" class="form-group">
 			{!! Form::submit('Registrar Mentor', ['class' => 'btn btn-primary'])!!}
 		</div>
 
