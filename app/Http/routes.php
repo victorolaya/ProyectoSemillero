@@ -56,7 +56,7 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('/admin/login','AdminController@login');
 	Route::post('/admin/login','AdminController@postLogin');
 	Route::get('/admin/logout','AdminController@logout');
-	Route::get('/admin/semillas','SemillasController@listarSemillas');
+
 
 	Route::get('semillas/{id}/destroy', ['uses'=>'SemillasController@destroy',
 		'as' => 'admin.semillas.destroy']);

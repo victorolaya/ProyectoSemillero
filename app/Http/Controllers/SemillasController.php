@@ -12,11 +12,20 @@ use Laracasts\Flash\Flash;
 
 class SemillasController extends Controller
 {
-    	
+    
+    public function index(){
+      $semillas = Semilla::orderBy('id','ASC')->paginate(10);
+      return view('admin.semilla.listarSemillas')->with('semillas',$semillas);
+    }
    	public function listarSemillas(){
-   		$semillas = Semilla::orderBy('id','ASC')->paginate(10);
-   		return view('admin.semilla.listarSemillas')->with('semillas',$semillas);
+   		
    	}
+
+    public function edit($id)
+    {
+       $semilla = Semilla::find($id);
+       return view('admin.semilla.editar')->with('semilla',$semilla);
+    }
 
     public function guardarSemilla(Request $request){
         $semilla = new Semilla($request->all());
@@ -42,6 +51,6 @@ class SemillasController extends Controller
         $semilla->save();
          Flash::success("Se ha editado la informacion de la semilla " . $semilla->nombre . " de forma satisfactoria!!!");
         //Una Vez editado el usuario, redirecciono a una ruta
-       return redirect()->route('admin.semilla.listarSemillas');
+       return redirect()->route('admin.semillas.index');
     }
 }

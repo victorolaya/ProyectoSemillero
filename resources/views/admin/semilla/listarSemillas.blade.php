@@ -19,7 +19,7 @@
 					<td style="text-align:center">{{$semilla->nombre}}</td>
 					<td style="text-align:center">{{$semilla->documento}}</td>
 					<td style="text-align:center">{{$semilla->numero}}</td>
-					<td style="text-align:center"><a href="" class="btn btn-warning" class="">
+					<td style="text-align:center"><a href="{{route('admin.semillas.edit', $semilla->id )}}" class="btn btn-warning" class="">
 					<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> 
 					<a href="{{route('admin.semillas.destroy',$semilla->id)}}" onclick="return confirm('¿Seguro que desea eliminarlo?')" class="btn btn-danger">
 						<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></a>
