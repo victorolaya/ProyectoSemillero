@@ -78,11 +78,9 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('admin/{id}/destroy',['uses'=>'AdminController@destroy', 
 		'as' => 'admin.admin.destroy']);
 
-	Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
-		Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
-			'as' => 'admin.mentor.imprimirpdf']);
-	});
-	
+
+	Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
+		'as' => 'admin.mentor.imprimirpdf']);
 });
 
 Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
