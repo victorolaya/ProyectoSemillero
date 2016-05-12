@@ -110,7 +110,7 @@ class ControladorMentores extends Controller
       //para poner en el controlador, con \ antes de PDF (\PDF) para no tener conflictos con el namespace
     $mentores = Mentor::all();
     //Mando un arreglo de mentores "mentores"
-    $pdf = PDF::loadView('admin/mentor/vistapdf',['mentores' => $mentores]);
+    $pdf = \PDF::loadView('admin/mentor/vistapdf',['mentores' => $mentores]);
     return $pdf->download('archivo.pdf');
     }
 }

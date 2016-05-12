@@ -80,10 +80,9 @@ Route::group(['middleware' => 'admin'], function(){
 
 	Route::resource('admin/semillas','SemillasController');
 
-	Route::group(['middleware'=>['web'],'prefix'=>'admin'],function(){
-		Route::get('mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
-			'as' => 'admin.mentor.imprimirpdf']);
-	});
+	Route::get('mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
+		'as' => 'admin.mentor.imprimirpdf']);
+
 	
 });
 
