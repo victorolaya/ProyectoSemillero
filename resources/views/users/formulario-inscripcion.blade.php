@@ -52,7 +52,7 @@
 	    </div>
 	    <div class = "form-group">
 	    	{!! form::label('documento','Tipo de documento de identidad')!!}
-	    	{!!Form::select('documento', array('' => 'Seleccione una opción','Cc' => 'Cedula de ciudadania', 'Ce' => 'Cedula extranjera', 'Ti' => 'Tarjeta de identidad', 'O' => 'Otro'), null, ['class' => 'form-control'])!!}
+	    	{!!Form::select('documento', array('' => 'Seleccione una opción','CC.' => 'Cedula de ciudadania', 'CE.' => 'Cedula extranjera', 'T.I' => 'Tarjeta de identidad', 'Otro' => 'Otro'), null, ['class' => 'form-control'])!!}
 	    	{!! form::text('numero',null,['class' => 'form-control', 'placeholder' => 'Numero de identificacion','required'])!!}
 		</div>
 		<div class = "form-group">
