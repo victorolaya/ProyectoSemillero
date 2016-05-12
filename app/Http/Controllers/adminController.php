@@ -12,7 +12,7 @@ use App\Admin;
 //Importo laracast flash para la proyeccion de mensajes
 use Laracasts\Flash\Flash;
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
