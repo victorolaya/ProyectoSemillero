@@ -17,7 +17,23 @@ Route::get('/', function () {
 	return view('users.inicio');
 });
 
-
+Route::group(['prefix' =>'inicio'],function(){
+	Route::get('semillas-primaria',function(){
+		return view('users.inicio.semillas-primaria');
+	});
+	Route::get('semillas-secundaria',function(){
+		return view('users.inicio.semillas-secundaria');
+	});
+	Route::get('diplomado-experiencias-universitarias',function(){
+		return view('users.inicio.diplomado-expUniversitarias');
+	});
+	Route::get('pre-icfes-saber-11',function(){
+		return view('users.inicio.preicfes-saber11');
+	});
+	Route::get('pre-icfes-10',function(){
+		return view('users.inicio.preicfes-saber10');
+	});
+});
 /*//ANTIGUO ANTES DE FLASH -> Route::group(['prefix' => 'admin'], function () {
 /Route::group(['middleware'=>['web'],'prefix' => 'admin'], function () {
 	
