@@ -2,7 +2,7 @@
 
 @section('title', 'Registrar Mentor')
 
-@section('content')
+@section('contenido')
 	
 	<!--Este codigo ya lo llamo directamente en main.blade.php referente a errores.blade.php-->
 	@if(count($errors) > 0)
