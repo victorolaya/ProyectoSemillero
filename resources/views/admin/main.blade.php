@@ -20,7 +20,7 @@
 	</section>
 
 	<section class="content">
-		<div class="container text-center">    
+		<div class="container">    
 		  <div class="row">
 		  	<section class="contenido">
 		  		<div class="panel panel-default">

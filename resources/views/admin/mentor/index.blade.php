@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Lista De Mentores')
 
-@section('content')
+@section('contenido')
 
 	<a href="{{ route('admin.mentor.create') }}" class="btn btn-info">Registrar Un Mentor</a>
 
@@ -19,43 +19,43 @@
 	<hr>
 	<table class="table table-striped">
 		<thead>
-			<th>ID</th>
-			<th>Nombres</th>
-			<th>Apellidos</th>
-			<th>Tipo Documento</th>
-			<th>Numero Documento</th>
-			<th>Edad</th>
-			<th>Fecha De Nacimiento</th>
-			<th>Correo</th>
-			<th>Municipio</th>
-			<th>Direccion</th>
-			<th>Numero Movil</th>
-			<th>Area Asignada</th>
-			<th>Accion</th>
+			<th Style="text-align:center">ID</th>
+			<th Style="text-align:center">Nombres</th>
+			<th Style="text-align:center">Apellidos</th>
+			<th Style="text-align:center">Tipo Documento</th>
+			<th Style="text-align:center">Numero Documento</th>
+			<th Style="text-align:center">Edad</th>
+			<th Style="text-align:center">Fecha De Nacimiento</th>
+			<th Style="text-align:center">Correo</th>
+			<th Style="text-align:center">Municipio</th>
+			<th Style="text-align:center">Direccion</th>
+			<th Style="text-align:center">Numero Movil</th>
+			<th Style="text-align:center">Area Asignada</th>
+			<th Style="text-align:center">Accion</th>
 
 		</thead>
 		<tbody>
 			@foreach($mentores as $mentor)
 				<tr>
-					<td>{{ $mentor->id }}</td>
-					<td>{{ $mentor->nombres }}</td>
-					<td>{{ $mentor->apellidos }}</td>
-					<td>
+					<td Style="text-align:center">{{ $mentor->id }}</td>
+					<td Style="text-align:center">{{ $mentor->nombres }}</td>
+					<td Style="text-align:center">{{ $mentor->apellidos }}</td>
+					<td Style="text-align:center">
 						@if($mentor->documento_de_identidad == "TI")
 							<span class="label label-success">{{ $mentor->documento_de_identidad}}</span>
 						@else
 							<span class="label label-primary">{{ $mentor->documento_de_identidad}}</span>
 						@endif
 					</td>
-					<td>{{ $mentor->numero_documento }}</td>
-					<td>{{ $mentor->edad }}</td>	
-					<td>{{ $mentor->fecha_de_nacimiento }}</td>				
-					<td>{{ $mentor->correo_electronico }}</td>
-					<td>{{ $mentor->municipio }}</td>
-					<td>{{ $mentor->direccion }}</td>
-					<td>{{ $mentor->numero_movil }}</td>
-					<td>{{ $mentor->areas_id }}</td>
-					<td>
+					<td Style="text-align:center">{{ $mentor->numero_documento }}</td>
+					<td Style="text-align:center">{{ $mentor->edad }}</td>	
+					<td Style="text-align:center">{{ $mentor->fecha_de_nacimiento }}</td>				
+					<td Style="text-align:center">{{ $mentor->correo_electronico }}</td>
+					<td Style="text-align:center">{{ $mentor->municipio }}</td>
+					<td Style="text-align:center">{{ $mentor->direccion }}</td>
+					<td Style="text-align:center">{{ $mentor->numero_movil }}</td>
+					<td Style="text-align:center">{{ $mentor->areas_id }}</td>
+					<td Style="text-align:center">
 						<a href="{{ route('admin.mentor.edit', $mentor->id )}}" class="btn btn-warning">
 						<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 

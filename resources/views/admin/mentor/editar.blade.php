@@ -1,8 +1,8 @@
-@extends('admin.template.main')
+@extends('admin.main')
 
 @section('title', 'Editando Mentor: ' . $mentor->nombres)
 
-@section('content')
+@section('contenido')
 	
 	{!! Form::open(['route' => ['admin.mentor.update',$mentor], 'method' => 'PUT']) !!}
 
@@ -59,7 +59,7 @@
 				{!! Form::label('areas_id','Area Asignada') !!}
 				{!! Form::select('areas_id', $areas, null, ['class' => 'form-control', 'placeholder' => 'Seleccione Area', 'required']) !!}
 		</div>
-		<div class="form-group">
+		<div Style="text-align:center" class="form-group">
 			{!! Form::submit('Guardar Cambios', ['class' => 'btn btn-primary'])!!}
 		</div>
 

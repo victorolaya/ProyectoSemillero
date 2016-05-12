@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Administrador extends Authenticatable
+class Admin extends Authenticatable
 {
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['nombre','cargo', 'email', 'password',];
+    protected $fillable = ['nombre', 'email', 'password',];
 
     /**
      * The attributes that should be hidden for arrays.

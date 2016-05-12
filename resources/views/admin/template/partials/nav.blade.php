@@ -15,17 +15,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          <li><a href="#">Inicio</a></li>
-          <!-- En la siguiente linea se le estipula la ruta al icono Administradores-->
-          <li><a href="{{ route('admin.user.index') }}">Administradores</a></li>
+          <li><a href="{{url ('/admin') }}">Administradores</a></li>
           <!-- En la siguiente linea se le estipula la ruta al icono Areas-->
           <li><a href="{{ route('admin.area.index') }}">Areas</a></li>
           <!-- En la siguiente linea se le estipula la ruta al icono Mentores-->
           <li><a href="{{ route('admin.mentor.index') }}">Mentores</a></li>
          <!-- En la siguiente linea se le estipula la ruta al icono Grupos-->
           <li><a href="{{ route('admin.grupo.index') }}">Grupos</a></li>
-          <!-- En la siguiente linea se le estipula la ruta al icono Mentores-->
-          <li><a href="{{ route('admin.mentor.index') }}">Mentores</a></li>
 
           <li><a href="#">Semillas</a></li>
          
@@ -65,15 +61,16 @@
        /////////////////////////////////////////////////-->
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Pagina Principal</a></li>
+        <li><a href="#"> <span class="label label-success">{{auth()->guard('admin')->user()->name}}</span></a></li>
+
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Generar Reportes <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
           <ul class="dropdown-menu">
            <!-- <li><a href="pdf">Reporte Mentores</a></li>-->
-           <li><a href="{{ route('admin.mentor.imprimirpdf') }}">Reporte Mentores</a></li>
-           {{ route('admin.grupo.index') }}
-             <li><a href="#">Reporte Semillas</a></li>
+           <li><a href="{{ route('admin.mentor.imprimirpdf') }}">Generar Reporte Mentores</a></li>
+             <li><a href="#">Generar Reporte Semillas</a></li>
+             <li><a href="{{url('/admin/logout')}}">Salir</a></li>
            <!--  <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>  -->
