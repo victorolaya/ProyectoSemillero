@@ -21,6 +21,9 @@
 	<p>
 		<Strong style="color:#68a94a">Diplomado  Mundo U - Preescolares</Strong>, donde los pequeños de 4 y 5 años se divierten aprendiendo ciencias y adquiriendo vocabulario en el idioma inglés.
 	</p>
+	<p>
+		<Strong style="Color:#68a94a">Diplomado Inducción U - Primaria,</strong> es el espacio para que los niños y niñas entre los 6 y 10 años, seleccionen un área entre Artes, Ciencias, Inglés o Tecnología.
+	</p>
 </div >
 
 @endsection
