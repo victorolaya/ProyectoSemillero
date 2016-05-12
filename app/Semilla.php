@@ -17,13 +17,12 @@ class Semilla extends Model
         'save_to'    => 'slug',
           ];
     */
-    protected $table = "semilla";
+    protected $table = "semillas";
 
     /**Los campos fillable son los campos permitidos para mostrar los ibjetos Json,cuando traigamos
     los datos, que datos quiero mostrar, que datos quiero que traiga!*/
-    protected $fillable = ['nombres','apellidos','documento_de_identidad',
-    'numero_documento','edad','fecha_de_nacimiento','direccion','municipio',
-    'numero_telefono','numero_movil_1','numero_movil_2','correo_electronico','eps','rh'];
+    protected $fillable = ['nombre','apellidos','edad','documento','numero','direccion',
+    'telefono','celular1','celular2','correoElectronico'];
 
     //RELACION MUCHOS A UNO: Una semilla puede tener varias notas
     public function notas()

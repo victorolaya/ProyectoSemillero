@@ -23,7 +23,7 @@
          <!-- En la siguiente linea se le estipula la ruta al icono Grupos-->
           <li><a href="{{ route('admin.grupo.index') }}">Grupos</a></li>
 
-          <li><a href="#">Semillas</a></li>
+          <li><a href="{{url('/admin/semillas')}}">Semillas</a></li>
          
        <!-- <li class="active"><a href="#">Areas <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Grupos</a></li>

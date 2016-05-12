@@ -14,7 +14,7 @@
 //PODEMOS TENER RUTAS DE TIPOGET, POST, PUT, DELETE
 
 Route::get('/', function () {
-	return view('index');
+	return view('users.inicio');
 });
 
 
@@ -70,7 +70,7 @@ Route::group(['middleware' => 'admin'], function(){
 		'as' => 'admin.grupo.destroy']);
 
 	Route::resource('admin/mentor','ControladorMentores');
-Route::get('mentores/{id}/destroy', ['uses' => 'ControladorMentores@destroy',
+	Route::get('mentores/{id}/destroy', ['uses' => 'ControladorMentores@destroy',
 	'as' => 'admin.mentor.destroy']);
 
 
@@ -82,3 +82,12 @@ Route::get('mentores/{id}/destroy', ['uses' => 'ControladorMentores@destroy',
 		'as' => 'admin.mentor.imprimirpdf']);
 });
 
+Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
+	Route::get('/',function(){
+		return view('users.formularios.index');
+	});
+	Route::get('formulario-de-inscripción-semillas', function(){
+		return view('users.formulario-inscripcion');
+	});
+	Route::post('/inscSemilla',['uses'=>'SemillasController@guardarSemilla', 'as'=>'inscSemilla']);
+});

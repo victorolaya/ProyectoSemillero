@@ -70,8 +70,7 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
-        ],
-*/
+        ],*/
 
         'mysql' => array(
             'driver'    => 'mysql',
