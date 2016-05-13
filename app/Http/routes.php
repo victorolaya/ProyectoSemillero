@@ -78,8 +78,17 @@ Route::group(['middleware' => 'admin'], function(){
 	Route::get('admin/{id}/destroy',['uses'=>'AdminController@destroy', 
 		'as' => 'admin.admin.destroy']);
 
+<<<<<<< HEAD
 	Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
 		'as' => 'admin.mentor.imprimirpdf']);
+=======
+Route::group(['middleware'=>['web'],'prefix' => 'admin'], function () {
+	
+	Route::get('admin/mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
+		'as' => 'admin.mentor.imprimirpdf']);
+
+  });
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
 });
 
 Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
@@ -90,4 +99,8 @@ Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
 		return view('users.formulario-inscripcion');
 	});
 	Route::post('/inscSemilla',['uses'=>'SemillasController@guardarSemilla', 'as'=>'inscSemilla']);
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
 });

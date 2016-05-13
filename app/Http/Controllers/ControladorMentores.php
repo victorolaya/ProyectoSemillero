@@ -114,4 +114,7 @@ class ControladorMentores extends Controller
     return $pdf->download('archivo.pdf');
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de

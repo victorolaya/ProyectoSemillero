@@ -1,10 +1,18 @@
 <?php
+<<<<<<< HEAD
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+=======
+/*$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
 
 $host = $url["host"];
 $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
 
 return [
 
@@ -58,7 +66,11 @@ return [
             'prefix' => '',
         ],
 
+<<<<<<< HEAD
        /* 'mysql' => [
+=======
+       'mysql' => [
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
@@ -70,9 +82,15 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
+<<<<<<< HEAD
         ],*/
 
         'mysql' => array(
+=======
+        ],
+
+     /* --------------------------------  'mysql' => array(
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
             'driver'    => 'mysql',
             'host'      => $host,
             'database'  => $database,
@@ -81,7 +99,11 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
+<<<<<<< HEAD
         ),
+=======
+        ),------------------------------------*/
+>>>>>>> 3ee7d56b88377542113883cdbec0a926248156de
 
         'pgsql' => [
             'driver' => 'pgsql',
