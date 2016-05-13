@@ -7,12 +7,18 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class IntegracionTest extends TestCase
 {
 
+	public function testComprobacionLogeo()
+	{
+		
+		$this->visit('admin/login')->type("admin@gmail.com","email")->type("12345","password")->press('Login')->visit('admin');
+		
+	}
 	public function testAgregarArea()
 	{
-		/*
-		*$this->visit('admin/area/create')->type("ingenio11","nombre")->type("Si","disponibilidad")->press('Agregar')->see("Se ha registrado el area ingenio11 de forma exitosa!!!");
-		*/
+		
+		//$this->visit('admin/area/create')->type("ingenio11","nombre")->type("Si","disponibilidad")->press('Agregar')->see("Se ha registrado el area ingenio11 de forma exitosa!!!");
 		$this->assertTrue(true);
+		
 	}
    
 	public function testAreaYaAgregada()
@@ -29,13 +35,13 @@ class IntegracionTest extends TestCase
 		/*
 		*$this->visit('admin/area/create')->type("Si","disponibilidad")->press('Agregar')->see("El campo nombre es obligatorio");
 		*/
-		  $this->assertTrue(true);
+		//  $this->assertTrue(true);
 	}
 
 	public function testSeleccionDisponibilidadArea()
 	{	/*
 		*$this->visit('admin/area/create')->type("Area ingenio Sistemas","nombre")->press('Agregar')->see("El elemento nombre ya está en uso");
 		*/
-		  $this->assertTrue(true);
+		 // $this->assertTrue(true);
 	}
 }

@@ -20,11 +20,6 @@ class ExampleTest extends TestCase
     /**
     * Validamos que el panel de administracion no fue craado
     */
-    public function testMethod()
-    {
-    $this->call('GET', '/admin');
-    $this->assertResponseStatus(404);
-    }    
 
     /**
      * A basic functional test example.
@@ -36,7 +31,7 @@ class ExampleTest extends TestCase
     {
         /**$this->visit('/')
              ->see('Laravel 5');*/
-             $this->assertTrue(true);
+            
              
       /** $this->visit('home')
        ->see('Esto es una Prueba en PHPUnit');*/
@@ -45,8 +40,7 @@ class ExampleTest extends TestCase
      public function testBasicExample2()
     {
         /**$this->visit('/')
-             ->see('Laravel 5');*/
-             $this->assertTrue(true);
+     
              
       /** $this->visit('home')
        ->see('Esto es una Prueba en PHPUnit');*/

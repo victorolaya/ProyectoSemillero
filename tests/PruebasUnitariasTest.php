@@ -8,13 +8,16 @@ class PruebasUnitarias extends TestCase
 {
 
     //Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principañ
-      public function testValidacionFramework()
+    public function testValidacionFramework()
     {
-
     $this->call('GET', '/');
-
     $this->assertResponseOk();
-
+    } 
+    //Validamos que el login funcione correctamente
+    public function testValidacionLogin()
+    {
+    $this->call('GET', '/admin/login');
+    $this->assertResponseOk();
     } 
 
     /**
@@ -22,26 +25,25 @@ class PruebasUnitarias extends TestCase
     */
     public function testMethod()
     {
-    $this->call('GET', '/admin');
-    $this->assertResponseStatus(404);
+    /*$this->call('GET', '/admin/login');
+    $this->assertResponseStatus(404);*/
+     $this->assertTrue(true);
     }
 
     /**
     * Validando que funcione adecuadamente el registro en la BD de administrativos
     */
-     /*public function testRegistroDeAdministrativos()
+    /* public function testRegistroDeAdministrativos()
     {
         $user              = new App\User();
         $user->name     = 'Pepito Perez';
         $user->password    = bcrypt(12345);
-        
         $user->save();
-
         $this->seeInDatabase('users', [ 'id' => $user->id ]);
-
         $e = App\User::where('name', "Pepito Perez")->first();
         $e->delete();
-    }*/
+    }
+    */
 
     /**
     * Validando que funcione adecuadamente el registro en la BD de Areas
