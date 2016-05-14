@@ -92,7 +92,7 @@ Route::group(['middleware' => 'admin'], function(){
 
 	Route::resource('admin/administradores','AdminController');
 	Route::get('administradores/{id}/',['uses'=>'AdminController@destroy', 
-		'as' => 'admin.administradores.destroy']);
+		'as' => 'admin.admin.destroy']);
 
 	Route::resource('admin/semillas','SemillasController');
 	Route::get('semillas/{id}/',['uses'=>'SemillasController@destroy', 
