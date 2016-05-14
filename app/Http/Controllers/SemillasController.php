@@ -17,9 +17,6 @@ class SemillasController extends Controller
       $semillas = Semilla::orderBy('id','ASC')->paginate(10);
       return view('admin.semilla.listarSemillas')->with('semillas',$semillas);
     }
-   	public function listarSemillas(){
-   		
-   	}
 
     public function edit($id)
     {
@@ -38,7 +35,7 @@ class SemillasController extends Controller
        	$semilla = Semilla::find($id);
        	$semilla->delete();
        	Flash::success("Se ha eliminado la semilla de forma exitosa!!!");
-    	return redirect('/admin/semillas');
+        return redirect('/admin/semillas');
     }
 
     public function update(Request $request, $id)
