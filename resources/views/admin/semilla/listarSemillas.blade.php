@@ -4,6 +4,10 @@
 
 @section('contenido')
 
+	<div Style="text-align:center">
+		<a href="{{ route('admin.semillas.create') }}" class="btn btn-info">Registrar Semilla</a><hr>
+	</div>
+
 	<table class="table table-striped">
 		<thead>
 			<th style="text-align:center">ID</th>

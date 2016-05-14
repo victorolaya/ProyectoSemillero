@@ -100,6 +100,7 @@ Route::group(['middleware' => 'admin'], function(){
 
 	Route::get('mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
 		'as' => 'admin.mentor.imprimirpdf']);
+
 });
 
 Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
@@ -109,5 +110,5 @@ Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
 	Route::get('formulario-de-inscripción-semillas', function(){
 		return view('users.formulario-inscripcion');
 	});
-	Route::post('/inscSemilla',['uses'=>'SemillasController@guardarSemilla', 'as'=>'inscSemilla']);
+	Route::post('/store',['uses'=>'SemillasController@guardarSemilla', 'as'=>'store']);
 });

@@ -31,6 +31,16 @@ class SemillasController extends Controller
         return redirect('/formularios-y-datos-semillero/formulario-de-inscripción-semillas');
     }
 
+    public function store(Request $request){
+        $semilla = new Semilla($request->all());
+        $semilla->save();
+        Flash::success("Se ha registrado la semilla de forma exitosa!!!");
+        return redirect('/admin/semillas/');
+    }
+    public function create(){
+      return view('admin.semilla.crear');
+    }
+
     public function destroy($id){
        	$semilla = Semilla::find($id);
        	$semilla->delete();

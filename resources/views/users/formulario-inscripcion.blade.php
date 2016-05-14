@@ -33,7 +33,7 @@
 	2. Después de diligenciado tienes que confirmar a cualquiera de los  teléfonos: 321 851 42 05 - 316 250 01 19 - (6)735 93 34 Fijo, si tu inscripción quedo registrada en el sistema y donde te confirmaran lo siguiente que deberás realizar.
 	</P>
 
-	{!! Form::open(['route' => 'inscSemilla', 'method' => 'POST']) !!}
+	{!! Form::open(['route' => 'store', 'method' => 'POST']) !!}
 	    <div class = "form-group">
 	    	{!! form::label('fecha','Fecha de diligenciamiento de este formulario')!!}
 	    	{!! form::date('calendario-fecha',\Carbon\Carbon::now(), ['class' => 'form-control', 'required'])!!}
