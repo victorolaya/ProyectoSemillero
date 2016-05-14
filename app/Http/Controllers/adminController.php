@@ -65,7 +65,7 @@ class AdminController extends Controller
     }
 
      //public function store(Request $request) <-- Antiguo, ahora se instancia el nuevo Request creado AdminRequest
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         //Me muestra todos los datos que me llegan desde la vista : dd($request ->all());
         $admin = new Admin($request->all());
