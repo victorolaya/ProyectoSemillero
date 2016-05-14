@@ -100,8 +100,6 @@ Route::group(['middleware' => 'admin'], function(){
 
 	Route::get('mentor/imprimir', ['uses' => 'ControladorMentores@imprimirpdf',
 		'as' => 'admin.mentor.imprimirpdf']);
-
-	
 });
 
 Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
