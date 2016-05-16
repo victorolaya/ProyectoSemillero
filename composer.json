@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.2",
         "cviebrock/eloquent-sluggable": "^3.1",
         "laracasts/flash": "^2.0",
-        "barryvdh/laravel-dompdf": "*"
+        "barryvdh/laravel-dompdf": "*",
+        "ext-gd":"*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
