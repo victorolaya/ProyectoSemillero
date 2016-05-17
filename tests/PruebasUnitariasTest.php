@@ -17,13 +17,9 @@ class PruebasUnitarias extends TestCase
 
     } 
 
-    /**
-    * Validamos que el panel de administracion no fue craado
-    */
-    public function testMethod()
+    public function testLogin()
     {
-    $this->call('GET', '/admin');
-    $this->assertResponseStatus(404);
+        $this->visit('admin/login')->type("admin@gmail.com","email")->type("123456","password")->press('Login')->visit('admin');
     }
 
     /**
@@ -31,16 +27,19 @@ class PruebasUnitarias extends TestCase
     */
      public function testRegistroDeAdministrativos()
     {
-        $user              = new App\User();
-        $user->name     = 'Pepito Perez';
-        $user->password    = bcrypt(12345);
-        
-        $user->save();
+        $admin              = new App\Admin();
+        $admin->name     = 'Pepito Perez';
+        $admin->password    = bcrypt(12345);
+        $admin->save();
+        $this->seeInDatabase('admins', [ 'id' => $admin->id ]);
+      
+    }
 
-        $this->seeInDatabase('users', [ 'id' => $user->id ]);
-
-        $e = App\User::where('name', "Pepito Perez")->first();
-        $e->delete();
+    public function testEliminacionDeAdministrador()
+    {
+        $a = App\Admin::where('name', "Pepito Perez")->first();
+        $a->delete();
+        $this->notSeeInDatabase('admins', [ 'id' => $a->id ]);
     }
 
     /**
@@ -52,17 +51,13 @@ class PruebasUnitarias extends TestCase
         $area->nombre      = 'Robotica';
         $area->disponibilidad      = 'Si';
         $area->save();
-
         $this->seeInDatabase('areas', [ 'id' => $area->id ]);
-
-        $e = App\Area::where('nombre', "Robotica")->first();
-        $e->delete();
     }
 
     /**
     * Validando que funcione adecuadamente el registro en la BD de Mentores
     */
-      public function testRegistroDeMentores()
+    public function testRegistroDeMentores()
     {
         $mentor              = new App\Mentor();
         $mentor->nombres     = 'Pepito Perez';
@@ -70,47 +65,75 @@ class PruebasUnitarias extends TestCase
         $mentor->edad        = '21';
         $mentor->areas_id   = '1';
         $mentor->save();
-
         $this->seeInDatabase('mentores', [ 'id' => $mentor->id ]);
-
-        $e = App\Mentor::where('nombres', "Pepito Perez")->first();
-        $e = App\Mentor::where('apellidos', "Castaño Cuchara")->first();
-        $e = App\Mentor::where('edad', "21")->first();
-        $e->delete();
     }
 
     /**
     * Validando que funcione adecuadamente el registro en la BD de Grupos
     */
-     /**public function testRegistroDeGrupos()
+    public function testRegistroDeGrupos()
     {
+        //Verificamos si el area se encuentra registrada
+        $area = App\Area::where('nombre', "Robotica")->first();
+        $this->seeInDatabase('areas', [ 'id' => $area->id ]);
+
+
+        //Verificamos que el mentor se encuentre registrado en la BD
+        $mentor = App\Mentor::where('nombres', "Pepito Perez")->first();
+        $mentor = App\Mentor::where('apellidos', "Castaño Cuchara")->first();
+        $mentor = App\Mentor::where('edad', "21")->first();
+        $this->seeInDatabase('mentores', [ 'id' => $mentor->id ]);
+
         $grupo              = new App\Grupo();
         $grupo->nombre      = 'grupo 05';
         $grupo->jornada     = 'Mañana';
-        $grupo->areas_id    = '1';
-        $grupo->mentores_id = '2';
+        $grupo->areas_id    = $area->id;
+        $grupo->mentores_id = $mentor->id;
         $grupo->save();
-
         $this->seeInDatabase('grupos', [ 'id' => $grupo->id ]);
-
-        $e = App\Grupo::where('nombre', "grupo 05")->first();
-    
-        $e->delete();
     }
-*/
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
-    
-    public function testBasicExample()
+
+     /**
+    * Validando que funcione adecuadamente el registro en la BD de semillas
+    */
+    public function testRegistroDeSemillas()
     {
-        /**$this->visit('/')
-             ->see('Laravel 5');*/
-             $this->assertTrue(true);
+        $semilla              = new App\Semilla();
+        $semilla->nombre     = 'Pepito Perez';
+        $semilla->apellidos   = 'Castaño Cuchara';
+        $semilla->edad        = '21';
+        $semilla->save();
+        $this->seeInDatabase('semillas', [ 'id' => $semilla->id ]);
+    }
 
+    public function testElminacionDeSemillas()
+    {
+        $semilla = App\Semilla::where('nombre', "Pepito Perez")->first();
+        $semilla->delete();
+        $this->notSeeInDatabase('semillas', [ 'id' => $semilla->id ]);
+    }
 
-    } 
+    public function testEliminacionDeGrupos()
+    {
+        $grupo = App\Grupo::where('nombre', "grupo 05")->first();
+        $grupo->delete();
+        $this->notSeeInDatabase('grupos', [ 'id' => $grupo->id ]);
+    }
 
+    public function testEliminacionDeMentores()
+    {
+        $mentor = App\Mentor::where('nombres', "Pepito Perez")->first();
+        $mentor = App\Mentor::where('apellidos', "Castaño Cuchara")->first();
+        $mentor = App\Mentor::where('edad', "21")->first();
+        $mentor->delete();
+        $this->notSeeInDatabase('mentores', [ 'id' => $mentor->id ]);
+    }
+
+    public function testElminacionDeArea()
+    {
+        $area = App\Area::where('nombre', "Robotica")->first();
+        $area->delete();
+        $this->notSeeInDatabase('grupos', [ 'id' => $area->id ]);
+    }
+ 
 }
