@@ -63,7 +63,7 @@
     	{!! form::text('rh', null, ['class' => 'form-control', 'placeholder' => 'R.H','required'])!!}
     </div>
     <div class= "form-group">
-    	{!! form::submit('Enviar', ['class' => 'btn btn-success'])!!}
+    	{!! form::submit('Agregar', ['class' => 'btn btn-success'])!!}
     </div>
 
 {!! Form::close() !!}

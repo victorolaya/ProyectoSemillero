@@ -69,7 +69,7 @@
           <ul class="dropdown-menu">
            <!-- <li><a href="pdf">Reporte Mentores</a></li>-->
            <li><a href="{{ route('admin.mentor.imprimirpdf') }}">Generar Reporte Mentores</a></li>
-             <li><a href="#">Generar Reporte Semillas</a></li>
+             <li><a href="{{ route('admin.semilla.imprimirpdf') }}">Generar Reporte Semillas</a></li>
              <li><a href="{{url('/admin/logout')}}">Salir</a></li>
            <!--  <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>

@@ -60,4 +60,13 @@ class SemillasController extends Controller
         //Una Vez editado el usuario, redirecciono a una ruta
        return redirect()->route('admin.semillas.index');
     }
+
+     public function imprimirpdf()
+    {
+      //para poner en el controlador, con \ antes de PDF (\PDF) para no tener conflictos con el namespace
+    $semillas = Semilla::all();
+    //Mando un arreglo de mentores "mentores"
+    $pdf = \PDF::loadView('admin/semilla/vistapdf',['semillas' => $semillas]);
+    return $pdf->download('ReporteSemillas-'.time().'.pdf');
+    }
 }

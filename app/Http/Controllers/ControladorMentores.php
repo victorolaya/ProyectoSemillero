@@ -111,7 +111,7 @@ class ControladorMentores extends Controller
     $mentores = Mentor::all();
     //Mando un arreglo de mentores "mentores"
     $pdf = \PDF::loadView('admin/mentor/vistapdf',['mentores' => $mentores]);
-    return $pdf->download('archivo.pdf');
+    return $pdf->download('ReporteMentores-'.time().'.pdf');
     }
 }
 
