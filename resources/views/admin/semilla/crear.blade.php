@@ -3,6 +3,16 @@
 @section('title', 'Crear Semilla')
 
 @section('contenido')
+
+@if(count($errors) > 0)
+    <div class="alert alert-danger" role="alert">
+        <ul>
+        @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+        @endforeach
+        </ul>
+    </div>
+@endif
 	
 {!! Form::open(['route' => 'admin.semillas.store', 'method' => 'POST']) !!}
     <div class = "form-group">

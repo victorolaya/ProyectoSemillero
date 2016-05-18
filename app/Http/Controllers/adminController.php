@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use Laracasts\Flash\Flash;
+use App\Http\Requests\AdminRequest;
 
 class AdminController extends Controller
 {
@@ -37,7 +38,7 @@ class AdminController extends Controller
     *Trae en formato json la informacion necesaria para
     *la validacion del login
     */
-    public function postLogin(Request $request)
+    public function postLogin(AdminRequest $request)
     {
 
     	$validator = validator($request->all(), [
@@ -87,7 +88,7 @@ class AdminController extends Controller
     *Trae todos los datos necesarios en formato json para crear un 
     *administrador y guardarlo en la base de datos
     */
-    public function store(Request $request)
+    public function store(AdminRequest $request)
     {
         $admin = new Admin($request->all());
         $admin ->password = bcrypt($request->password);
@@ -116,7 +117,7 @@ class AdminController extends Controller
     *$id por el cual se buscara el administrador 
     *$request la informacion que sera modificada en formato json
     */
-    public function update(Request $request, $id)
+    public function update(AdminRequest $request, $id)
     {
         $admin = Admin::find($id);
         $admin->fill($request->all());

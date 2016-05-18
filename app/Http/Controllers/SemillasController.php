@@ -6,7 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Semilla;
 use Laracasts\Flash\Flash;
-
+use App\Http\Requests\SemillaRequest;
 
 class SemillasController extends Controller
 {
@@ -40,7 +40,7 @@ class SemillasController extends Controller
     *Trae todos los datos necesarios en formato json para crear una
     *semilla y guardarlo en la base de datos desde la vista del usuario
     */
-    public function guardarSemilla(Request $request){
+    public function guardarSemilla(SemillaRequest $request){
         $semilla = new Semilla($request->all());
         $semilla->save();
         Flash::success("Se ha registrado la semilla de forma exitosa!!!");
@@ -53,7 +53,7 @@ class SemillasController extends Controller
     *Trae todos los datos necesarios en formato json para crear una semilla 
     * y guardarlo en la base de datos del panel de administracion
     */
-    public function store(Request $request){
+    public function store(SemillaRequest $request){
         $semilla = new Semilla($request->all());
         $semilla->save();
         Flash::success("Se ha registrado la semilla de forma exitosa!!!");
@@ -88,7 +88,7 @@ class SemillasController extends Controller
     *$id por el cual se buscara la semilla 
     *$request la informacion que sera modificada en formato json
     */
-    public function update(Request $request, $id)
+    public function update(SemillaRequest $request, $id)
     {
         $semilla = Semilla::find($id);
         $semilla->fill($request->all());
