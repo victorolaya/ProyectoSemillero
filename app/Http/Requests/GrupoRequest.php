@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class AreaRequest extends Request
+class GrupoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,6 +31,6 @@ class AreaRequest extends Request
      */
     public function rules()
     {
-        return ['nombre' => 'min:3|max:120|required|unique:areas'];
+        return ['nombre' => 'min:1|max:120|required'];
     }
 }

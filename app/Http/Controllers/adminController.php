@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
 
     /*
-    *Metodo que returna la vista con todos los administradores 
+    *Metodo que retorna la vista con todos los administradores 
     *almacenados en la base de datos paginando de 3 administrador
     *en la vista
     *

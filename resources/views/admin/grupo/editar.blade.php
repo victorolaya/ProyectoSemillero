@@ -15,12 +15,12 @@
 				{!! Form::select('jornada', ['Mañana' => 'Mañana','Tarde'=>'Tarde'], $grupo->jornada, ['class' => 'form-control'])!!}
 		</div>
 		<div class="form-group">
-				{!! Form::label('areas_id','Area Al Que Pertenece') !!}
-				{!! Form::text('areas_id',null, ['class' => 'form-control', 'placeholder'=> 'Ingrese El Id Del Area Al Que Pertenecera El Grupo', 'required']) !!}
+				{!! Form::label('areas_id','Area A Asignar') !!}
+				{!! Form::select('areas_id', $areas, null, ['class' => 'form-control', 'placeholder' => 'Seleccione Area', 'required']) !!}
 		</div>
 		<div class="form-group">
-				{!! Form::label('mentores_id','Grupo Al Que Pertenece') !!}
-				{!! Form::text('mentores_id',null, ['class' => 'form-control', 'placeholder'=> 'Ingrese El Id Del Mentor Al Que Pertenecera El Grupo', 'required']) !!}
+				{!! Form::label('mentores_id','Mentor Al Que Pertenece El grupo') !!}
+				{!! Form::select('mentores_id',$mentores,null, ['class' => 'form-control', 'placeholder'=> 'Seleccione Mentor Del Grupo', 'required']) !!}
 		</div>
 		<div Style="text-align:center" class="form-group">
 			{!! Form::submit('Guardar Cambios', ['class' => 'btn btn-primary'])!!}

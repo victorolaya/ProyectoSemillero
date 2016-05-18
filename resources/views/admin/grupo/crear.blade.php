@@ -31,7 +31,7 @@
 		</div>
 		<div class="form-group">
 				{!! Form::label('mentores_id','Mentor Al Que Pertenece El grupo') !!}
-				{!! Form::text('mentores_id',null, ['class' => 'form-control', 'placeholder'=> 'Ingrese El Id Del Mentor Al Que Pertenecera El Grupo', 'required']) !!}
+				{!! Form::select('mentores_id',$mentores,null, ['class' => 'form-control', 'placeholder'=> 'Seleccione Mentor Del Grupo', 'required']) !!}
 		</div>
 		<div style="text-align:center" class="form-group">
 			{!! Form::submit('Registrar', ['class' => 'btn btn-primary'])!!}
