@@ -7,7 +7,8 @@ class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Metodo que crea una tabla en la base de datos con los
+     *los campos especificados dentro del metodo
      * @return void
      */
     public function up()

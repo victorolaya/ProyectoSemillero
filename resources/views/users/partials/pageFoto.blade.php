@@ -8,18 +8,25 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="http://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <img src="{{asset('/imagenes/emisora.png')}}" alt="Image">
       <div class="carousel-caption">
-        ...
       </div>
     </div>
     <div class="item">
-      <img src="http://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+      <img src="{{asset('/imagenes/vistaniños.jpg')}}" alt="Image">
       <div class="carousel-caption">
-        ...
       </div>
     </div>
-    ...
+    <div class="item">
+      <img src="{{asset('/imagenes/auditorio.jpg')}}" alt="Image">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item">
+      <img src="{{asset('/imagenes/laboratorio.jpg')}}" alt="Image">
+      <div class="carousel-caption">
+      </div>
+    </div>
   </div>
 
   <!-- Controls -->

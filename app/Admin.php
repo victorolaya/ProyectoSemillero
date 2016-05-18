@@ -8,15 +8,14 @@ class Admin extends Authenticatable
 {
 
     /**
-     * The attributes that are mass assignable.
-     *
+     *Representa los atributos visibles en el request
+     *en formato json
      * @var array
      */
     protected $fillable = ['name', 'email', 'password',];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
+     *Los atributos que estan ocultos para arreglos
      * @var array
      */
     protected $hidden = [
