@@ -6,13 +6,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use Laracasts\Flash\Flash;
-use App\Http\Requests\AdminRequest;
+use App\Http\Requests\AdministradorRequest;
 
 class AdminController extends Controller
 {
 
     /*
-    *Metodo que retorna la vista con todos los administradores 
+    *Metodo que returna la vista con todos los administradores 
     *almacenados en la base de datos paginando de 3 administrador
     *en la vista
     *
@@ -92,10 +92,23 @@ class AdminController extends Controller
     {
         $admin = new Admin($request->all());
         $admin ->password = bcrypt($request->password);
-        $admin ->save();
-
-        Flash::success("Se ha registrado el area " . $admin->name . " de forma exitosa!!!");
-        return redirect()->route('admin.administradores.index');
+        $bandera =false;
+        $administradores = Admin::All();
+        foreach ($administradores as $administrador) {
+            if($administrador->email == $admin->email){
+                $bandera = true;
+                break;
+            }
+        }
+        if($bandera){
+            Flash::error("El usuario " . $admin->name . " ya se encuentra registrado");
+            return redirect()->route('admin.administradores.create');
+        }
+        else{
+            $admin ->save();
+            Flash::success("Se ha registrado el administrador " . $admin->name . " de forma exitosa!!!");
+            return redirect()->route('admin.administradores.index');
+        }
     }
 
     /*
@@ -123,8 +136,8 @@ class AdminController extends Controller
         $admin->fill($request->all());
         
         $admin->save();
-         Flash::success("Se ha editado la informacion del administrador " . $admin->name . " de forma satisfactoria!!!");
-       return redirect()->route('admin.administradores.index');
+        Flash::success("Se ha editado la informacion del administrador " . $admin->name . " de forma satisfactoria!!!");
+        return redirect()->route('admin.administradores.index');
     }
 
     /*

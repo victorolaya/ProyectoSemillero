@@ -7,18 +7,16 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class PruebasUnitarias extends TestCase
 {
 
-    /*
-    *Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principal
-    */
-    public function testValidacionFramework()
+    //Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principañ
+      public function testValidacionFramework()
     {
+
     $this->call('GET', '/');
+
     $this->assertResponseOk();
+
     } 
 
-    /*
-    * Validamos que el sistema de logeo funcione adecuadamente
-    */
     public function testLogin()
     {
         $this->visit('admin/login')->type("admin@gmail.com","email")->type("123456","password")->press('Login')->visit('admin');
@@ -37,9 +35,6 @@ class PruebasUnitarias extends TestCase
       
     }
 
-    /*
-    * Validando que funcione adecuadamente la eliminacion en la BD de administrativos
-    */
     public function testEliminacionDeAdministrador()
     {
         $a = App\Admin::where('name', "Pepito Perez")->first();
@@ -111,9 +106,6 @@ class PruebasUnitarias extends TestCase
         $this->seeInDatabase('semillas', [ 'id' => $semilla->id ]);
     }
 
-    /*
-    * Validando que funcione adecuadamente el eliminar en la BD de semillas
-    */
     public function testElminacionDeSemillas()
     {
         $semilla = App\Semilla::where('nombre', "Pepito Perez")->first();
@@ -121,9 +113,6 @@ class PruebasUnitarias extends TestCase
         $this->notSeeInDatabase('semillas', [ 'id' => $semilla->id ]);
     }
 
-      /*
-    * Validando que funcione adecuadamente el eliminar en la BD de grupos
-    */
     public function testEliminacionDeGrupos()
     {
         $grupo = App\Grupo::where('nombre', "grupo 05")->first();
@@ -131,9 +120,6 @@ class PruebasUnitarias extends TestCase
         $this->notSeeInDatabase('grupos', [ 'id' => $grupo->id ]);
     }
 
-    /*
-    * Validando que funcione adecuadamente el eliminar en la BD de mentores
-    */
     public function testEliminacionDeMentores()
     {
         $mentor = App\Mentor::where('nombres', "Pepito Perez")->first();
@@ -143,9 +129,6 @@ class PruebasUnitarias extends TestCase
         $this->notSeeInDatabase('mentores', [ 'id' => $mentor->id ]);
     }
 
-    /*
-    * Validando que funcione adecuadamente el eliminar en la BD de areas
-    */
     public function testElminacionDeArea()
     {
         $area = App\Area::where('nombre', "Robotica")->first();

@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="item">
-      <img src="{{asset('/imagenes/vistaniños.jpg')}}" alt="Image">
+      <img src="{{asset('/imagenes/vistaninos.jpg')}}" alt="Image">
       <div class="carousel-caption">
       </div>
     </div>

@@ -13,17 +13,14 @@
 @endsection
 @section('contenido')
 <h1 class="h1-formulario">DIPLOMADO INDUCCIÓN U</h1>
-<p style="text-align:center">
-	Semillas de Primaria 1° a 5°﻿
-</p>
 <p style="text-align:justify">
-	Haz llegado al lugar donde tenemos información sobre el Semillero Universitario para niños y niñas de básica primaria, te invitamos a explorarlo todo  y así comprenderás mejor lo que hacemos en la Universidad del Quindío.
+  Los niños y niñas de 4 y 5 años de edad pueden hacer parte del Semillero Universitario, aprendiendo conceptos de Ciencias y adquiriendo vocabulario del idioma inglés.
 </p>
 @endsection
 @section('sidebar-opciones')
 <div class="list-group">
-  <a href="{{url('inicio/semillas-preescolar')}}" class="list-group-item ">SEMILLAS PREESCOLAR</a>
-  <a href="{{url('inicio/semillas-primaria')}}" class="list-group-item active">SEMILLAS PRIMARIA</a>
+  <a href="{{url('inicio/semillas-preescolar')}}" class="list-group-item active">SEMILLAS PREESCOLAR</a>
+  <a href="{{url('inicio/semillas-primaria')}}" class="list-group-item">SEMILLAS PRIMARIA</a>
   <a href="{{url('inicio/semillas-secundaria')}}" class="list-group-item">SEMILLAS SECUNDARIA</a>
   <a href="{{url('inicio/diplomado-experiencias-universitarias')}}" class="list-group-item">DIPLOMADO EXPERIENCIAS UNIVERSITARIAS</a>
   <a href="{{url('inicio/pre-icfes-saber-11')}}" class="list-group-item">PRE ICFES SABER 11°</a>

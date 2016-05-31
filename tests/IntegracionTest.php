@@ -6,25 +6,19 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class IntegracionTest extends TestCase
 {
- 	/*
- 	*Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principañ
-    */
+ 	//Validamos que el framework funcione adecuadaente mediante un llamado a su vista (ruta) principañ
     public function testValidacionFramework()
     {
     $this->call('GET', '/');
     $this->assertResponseOk();
     } 
 
-    /*
-    *Validando el logeo de un administrativo
-	*/
+    //Validando el logeo de un administrativo
 	public function testLogin(){
 		$this->visit('admin/login')->type("admin@gmail.com","email")->type("123456","password")->press('Login')->visit('admin');
 	}
 
-	/*
-	*Validando la el index de administrativos (Listarlos)
-	*/
+	//Validando la el index de administrativos (Listarlos)
 	public function testListarAdmnistrativos(){
 		$this->visit('admin')->visit('admin');
 	}

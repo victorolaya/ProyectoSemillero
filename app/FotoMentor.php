@@ -5,23 +5,16 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class FotoMentor extends Model
-{   
-    /**
-    *Atributo que representa la tabla en la que se guardara
-    *una foto perteneciente a un mentor en la base de datos
-    */
-    protected $table = "fotosmentores";
+{
+      protected $table = "fotosmentores";
 
-    /*
-    *Atributo que representa los campos mostrados en formato json 
-    *cuando capturamos los datos
-    */
+    /**Los campos fillable son los campos permitidos para mostrar los ibjetos Json,cuando traigamos
+    los datos, que datos quiero mostrar, que datos quiero que traiga!*/
+
+    //Los atributs de mentores_id se ponen por si deprinto se llegan a utilizar
     protected $fillable = ['nombre','mentores_id'];
-    
-     /*
-    *Representa la relacion uno a uno con mentores 
-    *un mentor puede tener solo una foto
-    */
+
+    //Relacion UNO A UNO: una foto pertenece solo a una mentores
     public function mentores()
     {
     	return $this->belongsTo('App\Mentor');

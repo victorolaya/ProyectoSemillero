@@ -30,7 +30,7 @@ class SemillaRequest extends Request
             'edad' => 'required',
             'documento' => 'required',
             'numero' =>'min:8|max:15|required',
-            'direccion' => 'min:10|max:30|required',
+            'direccion' => 'min:6|max:30|required',
             'telefono' => 'min:7|max:15|required',
             'celular1' => 'min:10|max:15|required',
             'celular2' => 'min:10|max:15|required',

@@ -27,7 +27,7 @@ class AdminRequest extends Request
         return [
             'name' => 'min:4|max:25|required',
             'email' => 'min:4|max:20|required',
-            'password' => 'min:6|max:20|required'
+            'password' => 'min:5|max:20|required'
         ];
     }
 }

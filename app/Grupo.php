@@ -5,17 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Grupo extends Model
-{   
-    /**
-    *Atributo que representa la tabla en la que se guardara
-    *un grupo en la base de datos
-    */
-    protected $table = "grupos";
+{
+      protected $table = "grupos";
 
-    /*
-    *Atributo que representa los campos mostrados en formato json 
-    *cuando capturamos los datos
-    */
+    /**Los campos fillable son los campos permitidos para mostrar los ibjetos Json,cuando traigamos
+    los datos, que datos quiero mostrar, que datos quiero que traiga!*/
     protected $fillable = ['nombre','jornada','numero_de_semillas','areas_id','mentores_id'];
 
+     //RELACION MUCHOS A UNO: un Grupo solo puede pertenecer a una Area
+    /* public function areas()
+    {
+    	return $this->belongsTo('App\Area');
+    }
+    */
 }
