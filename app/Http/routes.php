@@ -116,6 +116,13 @@ Route::group(['prefix'=>'formularios-y-datos-semillero'],function(){
 	Route::get('formulario-de-inscripción-semillas', function(){
 		return view('users.formulario-inscripcion');
 	});
+	Route::get('objetivos', function(){
+		return view('users.formularios.objetivos');
+	});
+	Route::get('fundacion-social', function(){
+		return view('users.formularios.fundacion');
+	});
+
 	Route::post('/store',['uses'=>'SemillasController@guardarSemilla', 'as'=>'store']);
 });
 

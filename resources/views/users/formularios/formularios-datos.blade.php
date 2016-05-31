@@ -1,4 +1,4 @@
-@extends('plantilla.plantilla')
+@extends('users.inicio')
 
 @section('title', 'Formularios y datos semillero')
 
@@ -38,8 +38,9 @@ Somos un proyecto de extensión universitaria en la <a href="http://www.uniquind
 @endsection
 
 @section('sidebar-opciones')
-<a href="#" class="list-group-item">OBJETIVOS</a>
-<a href="#" class="list-group-item">FUNDACION SOCIAL</a>
+<a href="{{url('/objetivos')}}" class="list-group-item">OBJETIVOS</a>
+<a href="{{url('formularios-y-datos-semillero/fundacion-social')}}" class="list-group-item">FUNDACION SOCIAL</a>
 <a href="#" class="list-group-item">FORMULARIO INSCRIPCIÓN PRE ICFES - DIPLOMADO EXPEIENCIAS U</a>
 <a href="/formularios-y-datos-semillero/formulario-de-inscripción-semillas/" class="list-group-item">FORMULARIO DE INSCRIPCIÓN SEMILLAS</a>
+<a href="#" class="list-group-item">INSCRIPCIÓN TALLER BULLYING Y SUICIDIO EN NIÑOS Y ADOLESCENTES</a>
 @endsection
